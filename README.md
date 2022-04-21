@@ -1,7 +1,8 @@
 # prg4201-elevatorproject
 Author: Muhammad Afif bin Othman
 
-### Installation
+### Installation for Netbeans Application
+* Note that this installation requires a few setup like getting JFreeChart to work.
 1. (For Netbeans users) Drop files in C:\Users\<user>\Documents\NetBeansProjects
 2. Install JFreeChart -> Follow the installation guide [CLICK ME][id/name]
 
