@@ -5,7 +5,7 @@ Author: Muhammad Afif bin Othman
 * Note that this installation requires a few setup like getting JFreeChart to work.
 * Also note that versions prior to 1.07 does not require JFreeChart setup.
 1. (For Netbeans users) Drop files in C:\Users\<user>\Documents\NetBeansProjects
-2. (For versions 1.07+) Install JFreeChart -> Follow the installation guide [CLICK ME][id/name]
+2. (For ElevatorProject versions 1.07+) Install JFreeChart -> Follow the installation guide [CLICK ME][id/name]
 
 [id/name]: https://www.tutorialspoint.com/jfreechart/jfreechart_quick_guide.htm
 
