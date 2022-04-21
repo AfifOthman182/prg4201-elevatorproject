@@ -14,7 +14,7 @@ Author: Muhammad Afif bin Othman
 Changelog Version  | Content
 ------------- | -------------
 Version 1.07  | `READY`  <ul><li>Finalized JFreeChart Summary Graph</li><li>- [ ] Weight Functionality </li><li>- [x] Everything else </li></ul>
-Version 1.05  | `READY` <ul><li>- [] Summary Graph Card</li><li>- [ ] Weight Functionality </li><li>- [x] Elevator 2 Functionality </li><li>- [x] Everything else </li></ul>
+Version 1.05  | `READY` <ul><li>- [ ] Summary Graph Card</li><li>- [ ] Weight Functionality </li><li>- [x] Elevator 2 Functionality </li><li>- [x] Everything else </li></ul>
 
 ### Additional Notes
 Recommended netbeans version for best compatibility: `12.5`
