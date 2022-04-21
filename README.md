@@ -3,7 +3,7 @@ Author: Muhammad Afif bin Othman
 
 ### Installation
 1. (For Netbeans users) Drop files in C:\Users\<user>\Documents\NetBeansProjects
-2. Install JFreeChart -> [CLICK ME][id/name]
+2. Install JFreeChart -> Follow the installation guide [CLICK ME][id/name]
 
 [id/name]: https://www.tutorialspoint.com/jfreechart/jfreechart_quick_guide.htm
 
