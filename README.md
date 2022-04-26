@@ -13,7 +13,7 @@ Author: Muhammad Afif bin Othman, Muhammad Haikal bin Hakim, Salah Uddin
 ### Changelog
 Changelog Version  | Content
 ------------- | -------------
-Version 1.08  | `READY`  <ul><li>- [x] Extra Formatting, Tidying and Bug fixing </li><li>- [x] Everything else </li></ul>
+Version 2.0.0  | `READY`  <ul><li>- [x] Extra Formatting, Tidying and Bug fixing </li><li>- [x] Everything else </li></ul>
 Version 1.08  | `READY`  <ul><li>- [x] Weight Functionality </li><li>- [x] Everything else </li></ul>
 Version 1.07  | `READY`  <ul><li>- [x] Finalized JFreeChart Summary Graph</li><li>- [ ] Weight Functionality </li><li>- [x] Everything else </li></ul>
 Version 1.05  | `INACCESSIBLE` <ul><li>- [ ] Summary Graph Card</li><li>- [ ] Weight Functionality </li><li>- [x] Elevator 2 Functionality </li><li>- [x] Everything else </li></ul>
