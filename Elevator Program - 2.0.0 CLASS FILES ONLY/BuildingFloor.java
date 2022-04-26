@@ -135,7 +135,7 @@ public class BuildingFloor {
         System.out.println("\n\n\n----------------------------------------------------------------------------------------------------");
         System.out.println(" > BEGIN ELEVATOR OPERATIONS                                                          ");
         System.out.println("----------------------------------------------------------------------------------------------------\n");
-        
+
         //Print elevator floor, labels and passengers inside the elevator
         printElevator();
 
@@ -219,8 +219,6 @@ public class BuildingFloor {
                 passWeightCollection.remove(passengerKeyCode);
                 float newTotalWeight = getNewTotalWeight(passWeightCollection);
                 eWeight = newTotalWeight;
-//                System.out.println("[Map of " + elevatorContainer + " ]: " + passWeightCollection);
-//                System.out.println("[Weight of " + elevatorContainer + " ]: " + eWeight);
 
                 System.out.println("\n[" + elevatorContainer + "]: HAS DROPPED OFF " + passengerKeyCode);
 
@@ -234,10 +232,7 @@ public class BuildingFloor {
                     passDestTime.add(new GraphPassTimeTest(passengerKeyCode, passDestFloor, differenceTime));
 
                 } else {
-                    if(skippedWeightPassengers > 0){
-                        skippedWeightPassengers--;
-                    }
-                    
+
                     //Graph Data for Elevator 1 Passengers
                     endNanoTime = System.nanoTime();
                     long differenceTime = endNanoTime - startNanoTime;
@@ -262,7 +257,6 @@ public class BuildingFloor {
                         + "\n[" + elevatorContainer + " CURRENT WEIGHT]: " + e1Weight
                         + "\n[" + pass[i].getID() + " WEIGHT]: " + pass[i].getWeight() + ""
                         + "\n[TOTAL WEIGHT]:" + (e1Weight + pass[i].getWeight()) + "kg > " + EMAXWEIGHT + "kg");
-                //System.out.println("\n[" + elevatorContainer + "]: CANNOT PICK UP '" + pass[i].getID() + "' DUE TO EXCEEDING WEIGHT OF (ELEVATOR CURRENT WEIGHT)" + e1Weight + " (PASSENGER WEIGHT)" + passWeight + " > (MAX ELEVATOR WEIGHT)" + EMAXWEIGHT);
 
                 returnValue = 1;
             } else {
@@ -275,7 +269,6 @@ public class BuildingFloor {
                         + "\n[" + elevatorContainer + " CURRENT WEIGHT]: " + e2Weight
                         + "\n[" + pass[i].getID() + " WEIGHT]: " + pass[i].getWeight() + ""
                         + "\n[TOTAL WEIGHT]:" + (e2Weight + pass[i].getWeight()) + "kg > " + EMAXWEIGHT + "kg");
-                //System.out.println("\n[" + elevatorContainer + "]: CANNOT PICK UP '" + pass[i].getID() + "' DUE TO EXCEEDING WEIGHT OF (ELEVATOR CURRENT WEIGHT)" + e2Weight + " (PASSENGER WEIGHT)" + passWeight + " > (MAX ELEVATOR WEIGHT)" + EMAXWEIGHT);
                 returnValue = 1;
             } else {
                 returnValue = 0;
@@ -387,7 +380,7 @@ public class BuildingFloor {
                                     pass[i] = null;
                                 } else {
                                     //Skip passengers if they are overweight
-                                    skippedWeightPassengers++;
+                                    //skippedWeightPassengers++;
                                     System.out.println("\n[" + elevatorContainer + "]: HAS SKIPPED " + pass[i].getID());
                                 }
 
@@ -403,10 +396,10 @@ public class BuildingFloor {
                             float endNanoTime = System.nanoTime();
                             float differenceTime = endNanoTime - startNanoTime;
                             differenceTime = differenceTime / 1_000_000_000;
-                            
+
                             switch ((int) (Math.random() * 5 + 1)) {
                                 case 1 -> {
-                                    System.out.println("[" + pass[i].getID() + "]: \"I CANNOT BELIEVE THIS ELEVATOR TOOK " + differenceTime + " SECONDS!!!\"" );
+                                    System.out.println("[" + pass[i].getID() + "]: \"I CANNOT BELIEVE THIS ELEVATOR TOOK " + differenceTime + " SECONDS!!!\"");
                                     break;
                                 }
                                 case 2 -> {
@@ -454,11 +447,7 @@ public class BuildingFloor {
 
                                         //Add passenger to elevator weight container
                                         passWeightCollection.put(pass[i].getID(), pass[i].getWeight());
-//                                        //debug
-//                                        System.out.println(pass[i].getID() + " WEIGHT: " + pass[i].getWeight());
-//                                        System.out.println("ELEVATOR 1 WEIGHT: " + e1Weight);
-//                                        System.out.println("ELEVATOR 2 WEIGHT: " + e2Weight);
-                                        //get current total weight based on number of passengers and set to new weight
+
                                         float newTotalWeight = getNewTotalWeight(passWeightCollection);
 
                                         if (elevatorType == 1) {
@@ -469,7 +458,7 @@ public class BuildingFloor {
 
                                         pass[i] = null;
                                     } else {
-                                        skippedWeightPassengers++;
+                                        //skippedWeightPassengers++;
                                         System.out.println("\n[" + elevatorContainer + "]: HAS SKIPPED " + pass[i].getID());
                                     }
                                 } else if (knownDirection != pass[i].getDirection() && elevatorType == 1) {
@@ -672,14 +661,17 @@ public class BuildingFloor {
                     System.out.println("\n[ELEVATOR 1 - FINISHED WEIGHT]: " + e1Weight);
 
                 }
-                
                 notify();
-                Thread.sleep(1);
+                Thread.sleep(2500);
 
             }
         }
         System.out.println("\n[ELEVATOR 1] FINISHED OPERATING! 🎉🎉🎉 ------------------------------------------------ ");
-
+        for (int i = 0; i < pass.length; i++) {
+            if (pass[i] != null) {
+                System.out.println("Passenger: " + pass[i].getID() + "=> " + pass[i].getDestination());
+            }
+        }
 
     }
 
@@ -691,7 +683,6 @@ public class BuildingFloor {
                 // consumer thread waits while list
                 // is empty
                 while (skippedPassengers == 0 && pass.length == 0) {
-     
                     wait();
                 }
 
@@ -741,7 +732,9 @@ public class BuildingFloor {
                     floor--;
                 }
                 if (floor == 5 && e2Route.isEmpty() && pass.length == 0) {
-                    floor++;
+                    newTotalWeight = getNewTotalWeight(passWeight2Collection);
+                    e2Weight = newTotalWeight;
+                    System.out.println("\n[ELEVATOR 2 - FINISHED WEIGHT]: " + e2Weight);
 
                 } else if (floor == 5 && !e2Route.isEmpty()) {
                     floor--;
@@ -754,11 +747,10 @@ public class BuildingFloor {
                     e2KnownDirection = 1;
 
                 }
-                if(pass.length == 0 && e2Route.isEmpty()){
-                    floor++;
-                }
+
                 notify();
-                Thread.sleep(1);
+                Thread.sleep(2500);
+
             }
         }
         System.out.println("\n[ELEVATOR 2] FINISHED OPERATING! 🎉🎉🎉 ------------------------------------------------ ");
