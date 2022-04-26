@@ -3,12 +3,12 @@ Author: Muhammad Afif bin Othman, Muhammad Haikal bin Hakim, Salah Uddin
 
 ### Installation for Version 2.0.0
 Version 2.0.0 contains 3 files:
-* Class Files (*.java files)
-* Executable Bat (ElevatorTesting.bat executable file to run the system only)
+1. Class Files (*.java files)
+2. Executable Bat (ElevatorTesting.bat executable file to run the system only)
 
 
 To install the executable bat can be hit or miss due to mismatching java versions. The java version that worked for me to run the file is (java version 17.0.1). You can check java version by going to cmd and enter 'java -version' without the ' .
-* Netbeans project file
+3. Netbeans project file
 
 
 Netbeans project file requires JFreeChart to be installed.
