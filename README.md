@@ -1,5 +1,5 @@
 # prg4201-elevatorproject
-Author: Muhammad Afif bin Othman
+Author: Muhammad Afif bin Othman, Muhammad Haikal bin Hakim, Salah Uddin
 
 ### Installation for Netbeans Application
 ⚠ Note that this installation requires a few setup like getting JFreeChart to work.
