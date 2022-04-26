@@ -1,6 +1,16 @@
 # prg4201-elevatorproject
 Author: Muhammad Afif bin Othman, Muhammad Haikal bin Hakim, Salah Uddin
 
+### Installation for Version 2.0.0
+Version 2.0.0 contains 3 files:
+* Class Files (*.java files)
+* Executable Bat (ElevatorTesting.bat executable file to run the system only)
+To install the executable bat can be hit or miss due to mismatching java versions. The java version that worked for me to run the file is (java version 17.0.1). You can check java version by going to cmd and enter 'java -version' without the ' .
+* Netbeans project file
+Netbeans project file requires JFreeChart to be installed.
+
+
+
 ### Installation for Netbeans Application
 ⚠ Note that this installation requires a few setup like getting JFreeChart to work.
 
@@ -20,3 +30,4 @@ Version 1.05  | `INACCESSIBLE` <ul><li>- [ ] Summary Graph Card</li><li>- [ ] We
 
 ### Additional Notes
 Recommended netbeans version for best compatibility: `12.5`
+Recommended Java Version: java version "17.0.1" 2021-10-19 LTS, Java(TM) SE Runtime Environment (build 17.0.1+12-LTS-39), Java HotSpot(TM) 64-Bit Server VM (build 17.0.1+12-LTS-39, mixed mode, sharing)
